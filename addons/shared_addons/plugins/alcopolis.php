@@ -33,21 +33,6 @@ class Plugin_Alcopolis extends Plugin
 // 					),
 //				),
 			),
-				
-			'connection' => array(
-					'description' => array(// a single sentence to explain the purpose of this method
-							'en' => ''
-					),
-					'single' => true,// will it work as a single tag?
-					'attributes' => array(
-						'uri' => array(
-									'type' => 'text',
-									'flags' => '',
-									'default' => '',
-									'required' => false,
-								),
-							),
-			),
 		);
 	
 		return $info;
@@ -64,7 +49,7 @@ class Plugin_Alcopolis extends Plugin
 	
 	public function __construct()
 	{
-		$this->load->model('products/products_m');
+		
 	}
 	
 	function site_status()
@@ -78,11 +63,6 @@ class Plugin_Alcopolis extends Plugin
 		}else{
 			return true;
 		}
-	}
-	
-	function connection()
-	{
-		
 	}
 	
 }

@@ -1133,11 +1133,6 @@ class Asset {
 			return $glob_files;
 		}
 	}
-	
-	
-	public function in_build(){
-		return false;
-	}
 
 
 	/**

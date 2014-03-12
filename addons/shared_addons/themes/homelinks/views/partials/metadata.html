@@ -1,0 +1,69 @@
+<!-- Begin meta tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="distribution" content="global" />
+<meta name="resource-type" content="document" />
+<meta name="language" content="{{ lang:code }}" />
+
+{{ theme:favicon file="favicon.ico" sizes="16x16 32x32" }}
+
+
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>    
+
+
+<base href="{{ url:base }}" />
+
+<!-- Begin stylesheets -->
+{{ asset:css file="jquery/jquery.orbit-inn.mod.css" }}
+{{ asset:css file="style.css" }}
+{{ asset:css file="jquery/jquery-ui.css" }}
+<!-- End stylesheets -->
+
+<!-- Use Html5Shiv in order to allow IE render HTML5 -->
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+<!-- Begin scripts -->
+{{ asset:js file="jquery/jquery.js" }}
+{{ asset:js file="jquery/jquery-ui.min.js" }}
+{{ asset:js file="jquery/jquery.mCustomScrollbar.min.js" }}
+{{ asset:js file="jquery/jquery.mobile.customized.min.js" }}
+{{ asset:js file="jquery/jquery.easing.1.3.js" }}
+{{ asset:js file="sugar.min.js" }}
+{{ asset:js file="jquery.orbit-inn.mod.js" }}
+
+<!-- SWF Object Plugin -->
+{{ asset:js file="jquery/jquery.swfobject.1-1-1.min.js" }}
+
+<!-- Media Player Plugin -->
+{{ asset:js file="jquery/mep/mediaelement-and-player.min.js" }}
+{{ asset:js file="jquery/mep/mep-feature-backlight.js" }}
+<link href="{{theme:js_url}}jquery/mep/mediaelementplayer.css" rel="stylesheet">
+
+<!-- End scripts -->
+
+
+{{ asset:render }}
+
+{{ template:metadata }}
+
+<!-- Place CSS bug fixes for IE 7 in this comment -->
+<!--[if IE 7]>
+{{ theme:css file="ie.css" }}
+<![endif]-->
+
+<title>{{ settings:site_name }}&nbsp;&bull;&nbsp;{{ template:title }}</title>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-48725582-1']);
+  _gaq.push(['_setDomainName', 'innovate-indonesia.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>

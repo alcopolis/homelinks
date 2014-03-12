@@ -1,0 +1,15 @@
+	<div id="header-theme" class="theme clearfix">
+        <div id="logo" style="margin:10px 40px 10px 20px;">
+            <h1 style="width:240px; height:60px; background:url({{theme:image_path}}themes/logo.png)"><a href="{{ url:site  }}" title="Home">{{ settings:site_name }}</a></h1>
+        </div>
+        
+        <div id="navigation">
+            <nav id="menu" class="">
+                <ul id="main-menu" class="right">
+                   {{ navigation:links group="header" }} 
+                </ul>
+            </nav>	
+        </div>
+    </div>
+    
+    {{ theme:partial name="breadcrumbs" }}

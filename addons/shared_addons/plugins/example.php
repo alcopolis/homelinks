@@ -63,7 +63,7 @@ class Plugin_Example extends Plugin
 	 */
 	function hello()
 	{
-		$name = $this->attribute('name');
+		$name = $this->attribute('name', 'World');
 		
 		return 'Hello '.$name.'!';
 	}

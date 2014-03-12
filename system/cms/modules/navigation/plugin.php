@@ -130,12 +130,10 @@ class Plugin_Navigation extends Plugin
 					),
 				),
 			),// end links method
-			
 		);
 	
 		return $info;
 	}
-	
 
 	/**
 	 * Navigation
@@ -167,9 +165,8 @@ class Plugin_Navigation extends Plugin
 		);
 
 		$links = $this->pyrocache->model('navigation_m', 'get_link_tree', $params, config_item('navigation_cache'));
-		
+
 		return $this->_build_links($links, $this->content());
-		
 	}
 
 
