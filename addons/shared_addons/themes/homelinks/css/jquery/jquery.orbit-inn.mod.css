@@ -13,7 +13,7 @@
 	width:100%;
 	height:500px;
 	overflow:hidden;
-	background: #000 url('orbit/loading.gif') no-repeat center center;
+	background: #FFF url('orbit/loading.gif') no-repeat center center;
 }
 .orbit-slider>img,  
 .orbit-slider>div,

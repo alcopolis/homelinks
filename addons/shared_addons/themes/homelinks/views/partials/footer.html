@@ -1,5 +1,6 @@
 
 <div id="footer-theme" class="theme">
+	
     <div class="footer-menu">
         <h4>NEWS</h4>
         <ul>
@@ -21,22 +22,22 @@
     <div class="footer-menu">
         
     </div>
-    <div class="footer-menu right">
-    	<div id="social" class="left" style="text-align:center;">
-    		<h4>FOLLOW</h4>
-    		<a class="social-links" id="twitter" href="https://twitter.com/intent/follow?&screen_name=innovateind" target="_blank">Twitter</a>
-    		<a class="social-links" id="fb" href="https://www.facebook.com/pages/Innovate/370058633094270?fref=ts" target="_blank">Facebook</a>
-<!--     		<a class="social-links" id="pinterest" href="http://www.pinterest.com/innovate-indonesia" target="_blank">Pinterest</a> -->
-    	</div>
-		<div id="sinarmas" class="right"><img src="{{ theme:image_path }}sinarmas-logo.png" style="width:130px" /></div>
-    	<div class="clear"></div>
-    	<div id="copy" class="right">Copyright &copy; 2013 Innovate Indonesia. All Rights Reserved</div>	
+    <div class="footer-menu right" style="text-align:center;">
+		<div style="text-align:center; color:#FFF;margin:10px 0;">
+			<a href="{{ url:site }}contact"><img src="{{ theme:image_path }}cs.png" style="width:80px;"/></a>
+			<p style="padding:0;">
+				<strong>Customer Care</strong><br/>
+				<span style="font-size:1.2em; font-weight:bold; color:#FFF; line-height:1em">[ 021 ] 3199 8600</span>
+			</p>
+		</div>
+    	<div id="copy">Copyright &copy; <?php echo date('Y'); ?> Innovate Indonesia. All Rights Reserved</div>
     </div>
-    
     <div class="clear"></div>
+    
+	<div id="sinarmas"><img src="{{ theme:image_path }}sinarmas-logo.png" style="width:130px" /></div>
 </div>
 
-
+    
 <!-- Begin scripts -->	
 	{{ theme:js file="main.js" }}
 	

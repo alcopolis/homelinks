@@ -86,8 +86,8 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 
 /* Nav */
 
-#navigation{width:80%; margin-top:31px; float:right}
-#navigation #menu{margin:0; padding:0}
+#navigation{width:80%; float:right}
+#navigation #menu{margin:41px 0 0; padding:0}
 
 #navigation #menu ul#main-menu{
 	position:relative;
@@ -99,22 +99,21 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 	position:relative;
 	list-style: none outside none;
 	float:left;
-	margin:0 20px 0 0;	
+	margin:0 20px 0 0; padding	
 }
 
 #navigation #menu ul#main-menu > li:hover a, #navigation #menu ul#main-menu > li.current a{
-	color:#333;
+	color:#ED2024;
 }
 
 #navigation #menu ul#main-menu li a{
-	color: #39C;
+	color: #999;
     display: block;
 	font-size:15px;
     float: none;
     line-height: 19px;
-    padding: 15px 10px;
+    padding: 10px 10px;
     text-decoration: none;
-/*  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); */
 }
 
 #navigation #menu ul#main-menu li.has_children > a:after{
@@ -136,25 +135,17 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #navigation #menu ul#main-menu li.has_children > ul.dropdown{
 	display:none;
 /* 	background: rgba(51,153,204,.95); */
-	min-width:180px;
-	max-width:240px;
+	min-width:120px;
+	max-width:280px;
 	overflow:hidden;
 	position:absolute;
 	z-index:1;
-	border-top: 1px solid #999;
+	border-top: 1px solid #CCC;
 	box-shadow:0 1px 3px rgba(0,0,0,.35);
 	opacity:.95;
 	border-radius: 0 0 5px 5px;
 	
-	background: #005099; /* Old browsers */
-	background: -moz-linear-gradient(top,  #005099 0%, #2989d8 15%, #51a3cc 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#005099), color-stop(15%,#2989d8), color-stop(100%,#51a3cc)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #005099 0%,#2989d8 15%,#51a3cc 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #005099 0%,#2989d8 15%,#51a3cc 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #005099 0%,#2989d8 15%,#51a3cc 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  #005099 0%,#2989d8 15%,#51a3cc 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005099', endColorstr='#51a3cc',GradientType=0 ); /* IE6-9 */
-		
+	background:#ED2024;
 }
 
 #navigation #menu ul#main-menu li.has_children:hover > ul.dropdown{
@@ -168,8 +159,6 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #navigation #menu ul#main-menu li.has_children > ul.dropdown li{
 	margin:0;
 	padding:0;
-/* 	border-top:1px solid rgba(0,0,0,.35); */
-	border-bottom:1px solid rgba(255,255,255,.35);
 }
 
 #navigation #menu ul#main-menu li.has_children > ul.dropdown li:last-child{
@@ -181,17 +170,15 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 	font-size:13px;	
 }
 
-#navigation #menu ul#main-menu li.has_children > ul.dropdown li:hover{
-	background:#333;
-}
+#navigation #menu ul#main-menu li.has_children > ul.dropdown li:hover{background:#FFF;}
+#navigation #menu ul#main-menu li.has_children > ul.dropdown li:hover a{color:#ED2024;}
 
 
 /* Breadcrumbs */
 #breadcrumbs{
-	background:#EFEFEF; 
-/* 	border-bottom:1px dotted #999;*/
+	background:#EFEFEF;
 	position:relative;
-	margin:0 auto; padding:10px 0;
+	margin:80px auto 0 auto; padding:0 0 5px 0;
 	padding-left:20px;	
 	color:#999;
 }
@@ -306,21 +293,28 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #berlangganan{
 	width:100%;	
 	text-align:right;
-	margin:5px 0 0 0; padding:0;
+	margin-top:10px;
 }
 
 #berlangganan a{
 	color:#FFF; 
-	margin-right:40px; padding:5px 10px 5px 10px; 
-	font-size:16px;
+	margin:0 20px 0 0; padding:5px; 
+	font-size:12px;
 	background:#C00;
 	
-	border-radius:0 0 5px 5px;
-	border-top:1px solid rgba(0,0,0,.25);
-	border-bottom:1px solid rgba(255,255,255,.5);
+	border-radius:5px;
 }
 
 #berlangganan a:hover{background:#F00;}
+
+a#register{
+	color:#FFF !important; 
+	margin:6px 0 0 0; padding:3px 10px !important; 
+	font-size:12px !important;
+	background:#C00;
+	
+	border-radius:5px;
+}
 
 
 
@@ -409,7 +403,7 @@ body.subscribe #content{
 
 /* --------------------------------------------Footer------------------------------------- */
 
-footer{width:100%; background-color:#111; margin:0; padding:0; border-top:1px solid #333;}
+footer{width:100%; min-height:320px; background-color:#ED2024; margin:0; padding:0; border-top:1px solid #333; position:relative;}
 
 #footer-theme{width:90%; margin:0 auto;}
 
@@ -419,7 +413,7 @@ footer{width:100%; background-color:#111; margin:0; padding:0; border-top:1px so
 }
 
 .footer-menu h4{
-	color:#29ABE1;
+	color:#FFF;
 	text-shadow:0 -1px 1px rgba(255,255,255,.25);
 	font-size:16px;
 	font-weight:normal;
@@ -457,8 +451,8 @@ a#fb:hover{background-image:url(../img/fb-color.png)}
 a#pinterest{background-image:url(../img/pinterest.png)}
 a#pinterest:hover{background-image:url(../img/pinterest-color.png)}
 
-#sinarmas{margin-top:0; padding:5px 10px; border:1px solid #000; border-radius:10px; box-shadow: inset 0 0 2px rgba(255,255,255,.15);}
-#copy{font-size:11px; color:#CCC; margin-top:10px}
+#sinarmas{text-align:left; background:#FFF; position:absolute; right:0; bottom:20px; width:360px; padding:6px 0 2px 20px;}
+#copy{font-size:11px; color:#FFF;}
 
 /* .footer-menu{} */
 /* .footer-menu ul{margin:0 20px; float:left} */

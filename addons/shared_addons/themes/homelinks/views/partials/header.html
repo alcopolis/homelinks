@@ -4,12 +4,16 @@
         </div>
         
         <div id="navigation">
+			<div id="social" class="right" style="text-align:center; margin:10px 20px 0 0;">
+	    		<a class="social-links" id="twitter" href="https://twitter.com/intent/follow?&screen_name=innovateind" target="_blank">Twitter</a>
+	    		<a class="social-links" id="fb" href="https://www.facebook.com/pages/Innovate/370058633094270?fref=ts" target="_blank">Facebook</a>
+	    	</div>
             <nav id="menu" class="">
                 <ul id="main-menu" class="right">
                    {{ navigation:links group="header" }} 
+                   <li><a id="register" href="{{ url:site }}subscribe">Register Now</a></li>
                 </ul>
             </nav>	
         </div>
     </div>
-    
-    {{ theme:partial name="breadcrumbs" }}
+   

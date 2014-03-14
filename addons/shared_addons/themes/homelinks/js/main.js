@@ -15,7 +15,7 @@ $(document).ready(function() {
 		
 		$(document).scroll(function(){
 			console.log($(this).scrollTop());
-			if($(this).scrollTop() > 60){
+			if($(this).scrollTop() > 1){
 				$('header').css('box-shadow', '0 1px 10px #999');	
 			}else{
 				$('header').css('box-shadow', 'none');	

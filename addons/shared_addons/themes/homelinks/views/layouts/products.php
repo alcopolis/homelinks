@@ -7,7 +7,7 @@
 		{{ theme:partial name="maintenance" }}
 	{{ endif }}
 </head>
-<body id="top" class="home">
+<body id="top" class="products">
 	
 	{{ integration:analytics }}
 	
@@ -15,14 +15,14 @@
 	 	<header class="wrapper">
 	 		{{ theme:partial name="header" }}
 	 	</header>
-	 	 
-    	{{ theme:partial name="breadcrumbs" }}
-    
-	 	<div id="content" class="wrapper clear">
-		 	<div id="body-theme">
-				{{ theme:partial name="home" }}
+	 	
+	 	{{ theme:partial name="breadcrumbs" }}
+	 	
+	 	 <div id="content" class="wrapper clear">
+	 	 	<div id="body-theme">
+				{{ theme:partial name="product_page" }}
 			</div>
-	 	</div>
+	 	 </div>
 	 	 
 	 	 <footer>
 	    	{{ theme:partial name="footer" }}
