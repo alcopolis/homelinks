@@ -67,6 +67,9 @@ small{
 /* --------------------------------------------Header------------------------------------- */
 
 header{
+	background-image:url(../img/themes/header-default.png);
+	background-repeat:no-repeat;
+	background-position:260px center;
 	background-color:rgba(255,255,255,0.95);
 /* 	box-shadow:1px 0 1px #999; */
 	position:fixed; top:0; left:0;
@@ -324,64 +327,33 @@ a#register{
 /*-------------------------- Product Page Style ----------------------*/
 
 
-#packages{width:90%; margin:40px auto 80px auto; font-size:14px;}
+.zoom{font-size:3em;}
+#prod-packages{width:80%; margin:40px auto;}
+.packages{width:23%; margin:0 1%; float:left; text-align:center; border-radius:5px 5px 0 0; overflow:hidden; box-shadow:0 0 5px rgba(0,0,0,.25);}
+.packages p{padding:0;}
+.pack-item{width:100%; color:#FFF; text-shadow:0 1px 2px rgba(0,0,0,.5);}
+.pack-item h2{font-size:24px; background:#EEE; width:100%; margin:5px 0 0 0; border-radius:5px 5px 0 0; box-shadow:inset 0 0 10px rgba(0,0,0,0.25); line-height:1em; padding:10px 0; text-shadow:0 1px 1px #FFF;}
+.pack-item .item-detail p{text-align:center; line-height:1em;}
 
-.tabs{margin:40px 0;}
+.pack-item .item-detail{padding:20px 0; border-bottom:1px solid rgba(0,0,0,.25);}
+.pack-item .item-price{border-top:1px solid rgba(255,255,255,.25);}
 
-.content{
-	width:96%;
-	margin:20px auto;
-	color:#EFEFEF;
-	background:#007DC3;
-	padding:2%;
-	border-radius:10px;
-}
-	
-ul.tab-menu{list-type:none; border-bottom: 5px solid #0bc4ee; width:100%; padding:10px 0;}
-ul.tab-menu li{display:inline; margin:0; padding:5px; margin-right:30px;}
+#basic-super{background:#43331a;}
+#basic-super .pack-item h2{color:#43331a;}
 
-ul.tab-menu li a{font-size:24px; font-weight:bold; color:#0bc4ee;}
-ul.tab-menu li a:hover, ul.tab-menu li a.current{color:#007DC3;}
+#value-super{background:#ff7e00;}
+#value-super .pack-item h2{color:#ff7e00;}
 
-div.tab-content{width:100%; padding:0; display:none;}
-div.tab-content.active{display:block;}
+#hyper-super{background:#edbb34;}
+#hyper-super .pack-item h2{color:#edbb34;}
 
-div.info{width:35%; float:left; margin:0 10px;}
-div.info p{width:100%; margin:10px 0; color:#007DC3; font-size:14px; font-weight:normal;}
-div.info p em{font-weight:bold; font-style:normal;}
-
-
+#smash-super{background:#f8d800;}
+#smash-super .pack-item h2{color:#f8d800;}
 
 /*------------------------------------------------*/
 
-.toc{color:#717174; font-size:1em;}
-
-.toc h4{font-size:18px; font-weight:bold; margin:10px;}
-.toc ul {margin:10px 10px 20px 0; list-style-type:none;}
-.toc ul li{margin:5px 10px; font-family:"Helvetica", Arial, Tahoma, sans-serif; font-size:12px; font-weight:normal;}
-
-/*------------------------------------------------*/
-div.price{width:60%; float:right; font-family: "Arial", Helvetica, Tahoma, sans-serif; font-size:12px}
-
-table#packages-detail{text-align:center; border-spacing:0 5px; width:75%; margin:20px auto;}
-table#packages-detail th, table#packages-detail td{vertical-align:middle; padding: 5px 0; font-size:1.25em; color:#717174;}
-
-table#packages-detail thead{text-align:center; }
-table#packages-detail thead th{text-align:center; font-size:18px; font-weight:bold; color:#007DC3; border-bottom:2px solid #0bc4ee;}
-
-table#packages-detail .table-item{width:40%; text-align:left;}
-table#packages-detail tr.odd td{}
-table#packages-detail tr.even td{background:#CBEDFE;}
-table#packages-detail td.left{text-align:left;}
-table#packages-detail td.center{text-align:center;}
-table#packages-detail td.right{text-align:right;}
-
-table#packages-detail .price td{color:#007DC3; border-top:2px solid #0bc4ee; font-weight:bold}
-table#packages-detail .amount{font-weight:bold; font-size:18px}
-
-#bundle{width:100%; height:200px; margin:20px 0; background:#EFEFEF; display:none;}
-
-
+#toc{clear:both; color:#717174; padding:10px 0 0 0;}
+#toc p{font-size:11px; margin:0; padding:0;}
 
 
 /* -------------------------------------- Subscribe Page ----------------------------------- */
@@ -403,7 +375,7 @@ body.subscribe #content{
 
 /* --------------------------------------------Footer------------------------------------- */
 
-footer{width:100%; min-height:320px; background-color:#ED2024; margin:0; padding:0; border-top:1px solid #333; position:relative;}
+footer{width:100%; background-image:url(../img/footer-bg.jpg); background-color:#ED2024; margin:0; padding:0; border-top:1px solid #333; position:relative; box-shadow:inset 0 10px 10px rgba(0,0,0,0.25);}
 
 #footer-theme{width:90%; margin:0 auto;}
 
@@ -451,18 +423,6 @@ a#fb:hover{background-image:url(../img/fb-color.png)}
 a#pinterest{background-image:url(../img/pinterest.png)}
 a#pinterest:hover{background-image:url(../img/pinterest-color.png)}
 
-#sinarmas{text-align:left; background:#FFF; position:absolute; right:0; bottom:20px; width:360px; padding:6px 0 2px 20px;}
+#sinarmas{text-align:center; background:#FFF; position:absolute; left:20px; bottom:0px; width:140px; padding:6px 0 2px 0; box-shadow:0 -3px 10px rgba(0,0,0,0.25);}
 #copy{font-size:11px; color:#FFF;}
-
-/* .footer-menu{} */
-/* .footer-menu ul{margin:0 20px; float:left} */
-/* .footer-menu ul li.group-header{margin:0 4px 0 0; padding:0; font-size:18px;} */
-/* .footer-menu ul li{margin:0 4px 0 0; padding:0; font-size:12px;} */
-/* .footer-menu ul li a{color:#FFF;} */
-/* .footer-menu ul li a:hover{color:#39F; text-shadow:none;} */
-
-/* footer p{margin:0; padding:10px 0; line-height:0;} */
-/* footer #social{margin-right:20px; text-align:right;} */
-/* footer #copy{margin-right:20px; font-size:12px; color:#CCC; font-family: "Arial", Helvetica, Tahoma, sans-serif; font-size:10px} */
-
 
