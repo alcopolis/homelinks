@@ -75,12 +75,6 @@ header{
 	position:fixed; top:0; left:0;
 	height:80px;
 	z-index:99999;
-	
-	-moz-transition: box-shadow .75s ease-out;
-    -webkit-transition: box-shadow .75s ease-out;
-    -ms-transition: box-shadow .75s ease-out;
-    -o-transition: box-shadow .75s ease-out;
-	transition: box-shadow .75s ease-out;
 }
 
 /* Site Logo */
@@ -212,6 +206,7 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #body-theme{
 	width:100%; 
 	margin:0 auto;  
+/* 	background:#49E;	 */
 }
 
 #body-wrapper{clear:both; width:90%; margin:0 auto; padding:80px 0 40px 0;}
@@ -228,6 +223,28 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 	margin:0 auto 0 auto; 
 	z-index:9000;
 	padding-top:0;
+}
+
+.mod-epg{
+	padding:0;
+	width:99%;
+	margin:-20px 0 0 0;
+}
+
+.mod-epg>h4{
+	font-size:18px;
+	font-weight:normal;
+	margin:20px 0 5px 10px;
+	width:160px;
+	color:#666;
+	text-shadow:0 -1px 1px rgba(255,255,255,.5);
+	background:#CCC;
+	position: relative;
+	top:112px; left:-108px;
+	text-align:center;
+	
+	padding:3px 5px;
+	border-radius:5px 5px 0 0;
 }
 
 
@@ -273,13 +290,44 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 }
 
 
+/* Sticker */
+.sticker{position:fixed; z-index:9999}
+
+#berlangganan{
+	width:100%;	
+	text-align:right;
+	margin-top:10px;
+}
+
+#berlangganan a{
+	color:#FFF; 
+	margin:0 20px 0 0; padding:5px; 
+	font-size:12px;
+	background:#C00;
+	
+	border-radius:5px;
+}
+
+#berlangganan a:hover{background:#F00;}
+
+a#register{
+	color:#FFF !important; 
+	margin:6px 0 0 0; padding:3px 10px !important; 
+	font-size:12px !important;
+	background:#C00;
+	
+	border-radius:5px;
+}
+
+
+
 
 
 
 /*-------------------------- Product Page Style ----------------------*/
 
 
-.zoom{font-size:3em; font-weight:800;}
+.zoom{font-size:3em;}
 #prod-packages{width:80%; margin:40px auto;}
 .packages{width:23%; margin:0 1%; float:left; text-align:center; border-radius:5px 5px 0 0; overflow:hidden; box-shadow:0 0 5px rgba(0,0,0,.25);}
 .packages p{padding:0;}
@@ -290,35 +338,35 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 .pack-item .item-detail{padding:20px 0; border-bottom:1px solid rgba(0,0,0,.25);}
 .pack-item .item-price{border-top:1px solid rgba(255,255,255,.25);}
 
-#basic-super{background:#649bbb;}
-#basic-super .pack-item h2{color:#649bbb;}
+#basic-super{background:#43331a;}
+#basic-super .pack-item h2{color:#43331a;}
 
-#value-super{background:#e37474;}
-#value-super .pack-item h2{color:#e37474;}
+#value-super{background:#ff7e00;}
+#value-super .pack-item h2{color:#ff7e00;}
 
 #hyper-super{background:#edbb34;}
 #hyper-super .pack-item h2{color:#edbb34;}
 
-#smash-super{background:#aa79b5;}
-#smash-super .pack-item h2{color:#aa79b5;}
+#smash-super{background:#f8d800;}
+#smash-super .pack-item h2{color:#f8d800;}
 
+/*------------------------------------------------*/
 
-
-#toc{clear:both; color:#717174; margin-left:10px; padding:10px 0 0 0;}
+#toc{clear:both; color:#717174; padding:10px 0 0 0;}
 #toc p{font-size:11px; margin:0; padding:0;}
 
 
+/* -------------------------------------- Subscribe Page ----------------------------------- */
 
 
+body.subscribe{
+	background-image:url(../img/subscribe.jpg);
+	background-repeat:no-repeat;
+	background-position: bottom center;
+}
 
-
-a#register{
-	color:#FFF !important; 
-	margin:6px 0 0 0; padding:3px 10px !important; 
-	font-size:12px !important;
-	background:#C00;
-	
-	border-radius:5px;
+body.subscribe #content{
+	min-height:500px;	
 }
 
 
