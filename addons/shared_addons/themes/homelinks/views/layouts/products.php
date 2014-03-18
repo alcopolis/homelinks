@@ -16,8 +16,6 @@
 	 		{{ theme:partial name="header" }}
 	 	</header>
 	 	
-	 	{{ theme:partial name="breadcrumbs" }}
-	 	
 	 	 <div id="content" class="wrapper clear">
 	 	 	<div id="body-theme">
 				{{ theme:partial name="product_page" }}

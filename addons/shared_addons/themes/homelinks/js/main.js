@@ -15,10 +15,10 @@ $(document).ready(function() {
 		
 		$(document).scroll(function(){
 			console.log($(this).scrollTop());
-			if($(this).scrollTop() > 1){
-				$('header').css('box-shadow', '0 1px 10px #999');	
+			if($(this).scrollTop() > 40){
+				$('header').css({'box-shadow':'0 1px 10px #999', 'background-color':'rgba(255,255,255,0.9)'});	
 			}else{
-				$('header').css('box-shadow', 'none');	
+				$('header').css({'box-shadow':'none', 'background-color':'rgba(255,255,255,0)'});	
 			}
 		})
 		
