@@ -39,6 +39,27 @@ $(document).ready(function() {
 		});
 		
 		centerOrbitNav();
+		
+		
+		
+		//-------------------------- Content Tabs ---------------------------------------------//
+		$('#tab-nav li').first().addClass('active');
+		$('.tab-container').first().addClass('curr-tab').css({'display':'block'});
+		$('.tab-container').last().addClass('clearfix');
+        $('.curr-tab').css({'opacity':'1'});
+		
+		
+		$('ul#tab-nav li a').click(function(e){
+			e.preventDefault();
+			var id = $(this).attr('href');
+			
+			$('li.active').removeClass('active');			
+			$('.curr-tab').removeClass('curr-tab').css('display','none');
+			
+			$(this).parent().addClass('active');
+			$(id).addClass('curr-tab').fadeIn(100);
+		})
+		
 });
 
 

@@ -22,7 +22,7 @@
 			</div>
 	 	 </div>
 	 	 
-	 	 <footer>
+	 	 <footer class="clear">
 	    	{{ theme:partial name="footer" }}
 	     </footer>  
 	 	

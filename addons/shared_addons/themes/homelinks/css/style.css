@@ -207,21 +207,19 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 
 /* --------------------------------------------Content------------------------------------- */
 
-#content{margin-top:0; background:none; border-top:1px solid #AAA;}
+#content{margin-top:0; background:none; position:relative; font-size:14px;}
 .home #content{margin-top:80px; min-height:390px; background:#EFEFEF}
 
 #body-theme{
 	width:100%; 
 	margin:0 auto;  
- 	
 }
 
-#body-wrapper{clear:both; width:90%; margin:0 auto; padding:80px 0 40px 0;}
+#body-wrapper{width:90%; min-width:960px; margin:0 auto; padding:80px 0 40px 0;}
 
 .featured{margin:0 auto;}
 .featured h4{
 	color:#999;
-/* 	text-shadow:0 -1px 0 #AAA; */
 }
 
 .home #body-wrapper{
@@ -281,9 +279,60 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 /*-------------------------- Product Page Style ----------------------*/
 
 
+.tabs{
+	width:100%;
+	margin:0 auto;
+	margin:40px auto;
+}
+
+#tab-nav{
+	list-style:none;
+	margin:0; padding:0;
+	position:relative;	
+}
+
+#tab-nav li{
+	float:left;
+	position:relative;
+	margin:0 5px 0 0;
+	padding:10px;
+	background:#999;
+	border-radius:5px 5px 0 0;
+}
+
+#tab-nav li a{color:#EEE}
+
+#tab-nav li:hover a, #tab-nav li.active a{color:#333;}
+#tab-nav li:hover, #tab-nav li.active{background:#EFEFEF; border-bottom:none;}
+
+#tab-nav:after{
+	content: "."; display: block; height: 0; clear: both; visibility:hidden;  
+}
+
+
+
+.tab-container{
+	display:none;
+	margin:0;
+	padding:20px 0;
+	width:100%;
+	background:#EFEFEF;
+	border-radius:0 15px 15px 15px;
+	
+	-moz-transition: opacity .5s ease-out; 
+    -webkit-transition: opacity .5s ease-out;
+    -ms-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+	transition: opacity .5s ease-out;
+}
+
+.tab-container > *{margin:0 40px;}
+
+
 .zoom{font-size:3em; font-weight:800;}
-#prod-packages{width:100%; max-width:960px; margin:40px auto; background:#EEE; padding:40px 0; border-radius:20px; box-shadow:0 0 5px rgba(0,0,0,0.35);}
-.packages{width:20%; max-width:220px; margin:0 2.5%; float:left; text-align:center; border-radius:5px 5px 0 0; overflow:hidden;}
+
+#packages-container{width:960px; margin:0 auto;}
+.packages{width:220px; margin:0 10px; float:left; text-align:center; border-radius:5px 5px 0 0; overflow:hidden;}
 .packages p{padding:0;}
 .pack-item{width:100%; color:#FFF; text-shadow:0 1px 2px rgba(0,0,0,.5);}
 .pack-item h2{font-size:24px; background:#EEE; width:100%; margin:5px 0 0 0; border-radius:5px 5px 0 0; box-shadow:inset 0 0 10px rgba(0,0,0,0.25); line-height:1em; padding:10px 0; text-shadow:0 1px 1px #FFF;}
