@@ -49,7 +49,7 @@ class Admin_Channels extends Admin_Controller
 	
 	public function index()
 	{				
-		$pagination = create_pagination('admin/epg/channels/index', $this->epg_ch_m->count_channel(), 20,5);
+		$pagination = create_pagination('admin/epg/channels/index', $this->epg_ch_m->count_channel(), 30,5);
 		$all_channels = $this->epg_ch_m->order_by('is_active','DESC')->limit($pagination['limit'], $pagination['offset'])->get_all_channel();
 
 		$this->render('admin/channels', array('pagination'=>$pagination, 'channels'=>$all_channels));
@@ -104,6 +104,8 @@ class Admin_Channels extends Admin_Controller
 			$this->ch_data = $this->epg_ch_m->get_channel($id);
 			$temp = $this->epg_ch_m->select('cat')->get_categories();
 			
+			
+			$this->ch_data->categories[] = '- Select -';
 			foreach($temp as $key=>$cat){
 				$this->ch_data->categories[] = $cat->cat;
 			}

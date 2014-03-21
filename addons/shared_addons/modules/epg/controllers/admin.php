@@ -30,7 +30,7 @@ class Admin extends Admin_Controller
 	{		
 		$pagination = create_pagination('admin/epg/index', $this->epg_sh_m->count_featured_show(), 5);
 		
-		var_dump($pagination['limit'], $pagination['offset']);
+		//var_dump($pagination['limit'], $pagination['offset']);
 		
 		$featured = $this->epg_sh_m->limit($pagination['limit'], $pagination['offset'])->get_featured_show();
 		

@@ -66,6 +66,7 @@ class Lex_Parser
 		{
 			// Let's merge the current data array with the local scope variables
 			// So you can call local variables from within blocks.
+						
 			$data = array_merge(Lex_Parser::$data, $data);
 			
 			// Since this is not the first time parse() is called, it's most definately a callback,

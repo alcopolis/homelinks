@@ -4,17 +4,34 @@
 
 
 #subscribe-ack{
-	width:25%;
+	width:200px;
 	font-size:14px;
-	color:#39C;
 	position:relative;
-	top:100px;
+	top:40px;
+	color:#999;
 }
 
-#form-container{
-	width:55%;
+#subscribe-ack h1{color:#F00; font-size:18px; font-weight:normal;}
+#subscribe-ack p{font-size:12px; line-height:16px;}
+
+#subscribe-content{
+	width:718px; height:auto;
 	color:#333;
-	margin-left:80px;	
+	margin:20px 0 40px 40px;
+/* 	outline:1px solid #CCC; */
+
+	border:1px solid #CCC;
+	border-radius:5px;
+
+	position:relative;
+	overflow:hidden;
+}
+
+#container{width:1440px; display:block; position:relative; left:0;}
+
+#form-container{
+	width:718px;
+	display:block;
 }
 
 #form-container h1{color:#39C;}
@@ -22,15 +39,15 @@
 #subscribe-form{
 	background:rgba(255,255,255,.9);
 	padding:40px 0 20px 0;
-	box-shadow:0 0 20px rgba(0,0,0,.1);	
 	border-radius:5px;
 }
 
-#subscribe-form label{color:#444}
+#subscribe-form input, #subscribe-form textarea{border:1px solid #CCC; border-radius:5px; padding:5px; color:#666; font-family:"Arial", Verdana, Geneva, sans-serif; font-size:12px;}
+#subscribe-form label{color:#0C223F; font-size:14px;}
 
 form #subscribe-form input[type='text']{width:200px;}
-form #subscribe-form input[type='submit']{cursor:pointer; background:#39C; border:none; width:160px; color:#FFF; font-weight:bold;}
-form #subscribe-form input[type='submit']:hover{background:#00CC30; color:#FFF;}
+form #subscribe-form input[type='submit']{cursor:pointer; background:#F00; border:none; width:160px; padding:10px 0; color:#FFF; font-weight:bold;}
+form #subscribe-form input[type='submit']:hover{background:#0C223F; color:#FFF;}
 form #subscribe-form span{color:#F00; font-size:14px; font-weight:bold}
 
 ul.form{overflow:hidden;}

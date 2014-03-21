@@ -303,7 +303,7 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #tab-nav li a{color:#EEE}
 
 #tab-nav li:hover a, #tab-nav li.active a{color:#333;}
-#tab-nav li:hover, #tab-nav li.active{background:#EFEFEF; border-bottom:none;}
+#tab-nav li:hover, #tab-nav li.active{background:#FFF;}
 
 #tab-nav:after{
 	content: "."; display: block; height: 0; clear: both; visibility:hidden;  
@@ -316,7 +316,7 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 	margin:0;
 	padding:20px 0;
 	width:100%;
-	background:#EFEFEF;
+	background:#FFF;
 	border-radius:0 15px 15px 15px;
 	
 	-moz-transition: opacity .5s ease-out; 
@@ -358,7 +358,7 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #toc{clear:both; color:#717174; margin-left:20px; padding:10px 0 0 0;}
 #toc p{font-size:11px; margin:0; padding:0;}
 
-#banner{margin:0 0 0 0; padding:0; height:480px; overflow:hidden; border-bottom:1px solid #CCC;}
+#banner{margin:0 0 0 0; padding:0; height:480px; overflow:hidden;}
 #banner img{margin:0; padding:0;}
 
 
@@ -373,6 +373,34 @@ a#register{
 	
 	border-radius:5px;
 }
+
+
+
+
+/* ====================================================== Channel Lineup ======================================================= */
+
+#lineup{line-height:2.5em;}
+#lineup span{padding:3px 10px;}
+.genre{background:#ED2024; margin-left:20px; border-radius:3px;color:#FFF;}
+.genre:first-child{margin-left:0;}
+.arrow-right{
+	display:inline-block;
+	line-height:0;
+	margin:0 !important;
+	padding:0 !important;
+	width: 0 !important; 
+	height: 0 !important; 
+	border-top: 5px solid transparent; 
+	border-left: 20px solid #ED2024;
+	border-bottom: 5px solid transparent;
+}
+
+.ch-list{background:#EEE; }
+
+
+
+
+
 
 
 

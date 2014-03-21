@@ -31,7 +31,7 @@
 	        			
 	        			<tfoot>
 							<tr>
-								<td colspan="6">
+								<td colspan="7">
 									<div class="inner"><?php echo $pagination['links']; ?></div>
 								</td>
 							</tr>

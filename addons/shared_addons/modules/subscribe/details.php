@@ -22,59 +22,7 @@ class Module_Subscribe extends Module {
 
 	public function install()
 	{
-		$this->dbforge->drop_table('inn_subscribe');
-		//$this->db->delete('settings', array('module' => 'sample'));    //Maybe usefull for future projects
-
-		$subscribe_table = array(
-                        'id' => array(
-							  'type' => 'INT',
-							  'constraint' => '11',
-							  'auto_increment' => FALSE
-						),
-						'first_name' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '20'
-						),
-						'last_name' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '20'
-						),
-						'address' => array(
-								'type' => 'TEXT',
-						),
-						'area_code' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '4'
-						),
-						'phone' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '20'
-						),
-						'mobile' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '20'
-						),
-						'email' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '100'
-						),
-						'package' => array(
-								'type' => 'VARCHAR',
-								'constraint' => '50'
-						),
-						'closing_flag' => array(
-								'type' => 'INT',
-								'constraint' => '11'
-						)
-				);
-
-		$this->dbforge->add_field($subscribe_table);
-		$this->dbforge->add_key('id', TRUE);
-
-		if($this->dbforge->create_table('inn_subscribe'))
-		{
-			return TRUE;
-		}
+		return TRUE;
 	}
 
 	public function uninstall()

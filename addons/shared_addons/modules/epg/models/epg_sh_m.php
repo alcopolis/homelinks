@@ -9,7 +9,7 @@
  */
 class Epg_Sh_m extends MY_Model {
 	
-	protected $_table = 'inn_epg_show_detail';
+	protected $_table = 'epg_show_detail';
 	
 	public $rules = array(
 			'title' => array(
@@ -60,7 +60,7 @@ class Epg_Sh_m extends MY_Model {
 	public function __construct()
 	{		
 		parent::__construct();
-		//$this->_table = 'inn_epg_show_detail';
+		//$this->_table = 'epg_show_detail';
 	}
 	
 	
@@ -92,8 +92,8 @@ class Epg_Sh_m extends MY_Model {
 	public function get_show_detail($id){
 		$this->db->select('t0.id, t0.title, t0.cid, t0.date, t0.time, t0.duration, t0.syn_id, t0.syn_en, t0.poster, t0.trailer');
 		$this->db->select('t1.name, t1.num, t1.logo');
-		$this->db->from('inn_epg_show_detail t0');
-		$this->db->join('inn_epg_ch_detail t1', 't0.cid = t1.id', 'RIGHT');
+		$this->db->from('epg_show_detail t0');
+		$this->db->join('epg_ch_detail t1', 't0.cid = t1.id', 'RIGHT');
 		$this->db->where('t0.id',$id);
 	
 		return $this->db->get()->row();
@@ -109,8 +109,8 @@ class Epg_Sh_m extends MY_Model {
 		$hari= date('Y-m-d');
 		
 		$this->db->select('t0.id, t0.cid, t0.cat_id, t0.title, t0.date, t0.time, t0.duration, t1.name');
-		$this->db->from('inn_epg_show_detail t0');
-		$this->db->join('inn_epg_ch_detail t1', 't1.id = t0.cid', 'LEFT');
+		$this->db->from('epg_show_detail t0');
+		$this->db->join('epg_ch_detail t1', 't1.id = t0.cid', 'LEFT');
 		$this->db->where(array('t0.date>='=>$hari,'t0.is_featured'=> 1));
 		$this->db->order_by('cid', 'ASC');
 		$this->db->order_by('date', 'ASC');
@@ -168,9 +168,9 @@ class Epg_Sh_m extends MY_Model {
 		$this->db->SELECT('t0.poster as poster');
 		$this->db->SELECT('t0.trailer as trailer');
 		$this->db->SELECT('t1.name as chname');
-		$this->db->from('inn_epg_ch_detail t1');
+		$this->db->from('epg_ch_detail t1');
 		
-		$this->db->join('inn_epg_show_detail t0','t1.id = t0.cid','LEFT');
+		$this->db->join('epg_show_detail t0','t1.id = t0.cid','LEFT');
 		
 		if(isset($category)){
 			$this->db->where('t0.cat_id', $category);
@@ -191,7 +191,7 @@ class Epg_Sh_m extends MY_Model {
 		
 		$harirange=date('Y-m-d',strtotime("+7 day"));
 		
-		$this->db->from('inn_epg_show_detail');
+		$this->db->from('epg_show_detail');
 		$this->db->where('is_featured',1);
 		$this->db->where('date>=',$hari);
 		$this->db->where('date<=',$harirange);
@@ -210,7 +210,7 @@ class Epg_Sh_m extends MY_Model {
 		$this->db->SELECT('t0.syn_id as ina');
 		$this->db->SELECT('t0.syn_en as eng');
 		$this->db->SELECT('t0.poster as poster');
-		$this->db->from('default_inn_epg_show_detail t0');
+		$this->db->from('default_epg_show_detail t0');
 		$this->db->where('t0.date',$hari);
 		
 		return $this->db->get()->result();
@@ -256,7 +256,7 @@ class Epg_Sh_m extends MY_Model {
 		if($fields == NULL && !$single){
 			$hari= date("Y-m-d");
 			
-			$chs = $this->db->where('is_active', 1)->order_by('name', 'asc')->get('inn_epg_ch_detail')->result();
+			$chs = $this->db->where('is_active', 1)->order_by('name', 'asc')->get('epg_ch_detail')->result();
 			
 			foreach($chs as $ch){
 				$key = $ch->id;
@@ -290,23 +290,14 @@ class Epg_Sh_m extends MY_Model {
 	public function get_epg_by($where){
 		$data = new stdClass();
 		
-		if($where['cat_id'] == '0'){
-			$chs = $this->db->where('is_active', 1)->order_by('name', 'asc')->get('inn_epg_ch_detail')->result();
-		}else{
-			$chs = $this->db->where(array('is_active'=>1, 'cat'=>$where['cat_id']))->order_by('name', 'asc')->get('inn_epg_ch_detail')->result();
-		}
-		
-			
-		foreach($chs as $ch){
-			$key = $ch->id;
-				
-			$data->$key = new stdClass();
-			$data->$key->ch = $ch;
+		$ch = $this->db->where(array('is_active'=>1, 'id'=>$where['cid']))->get('epg_ch_detail')->row();
 
-			$this->db->where('cid',$key);
-			$this->db->where('date', $where['date']);
-			$data->$key->sh = $this->db->get($this->_table)->result();
-		}
+		$data->ch = $ch;
+
+		$this->db->where('cid',$where['cid']);
+		$this->db->where('date', $where['date']);
+		
+		$data->sh = $this->db->get($this->_table)->result();
 				
 		return $data;
 	}

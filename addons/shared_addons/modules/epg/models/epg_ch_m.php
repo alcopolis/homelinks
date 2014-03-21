@@ -29,19 +29,19 @@ class Epg_Ch_m extends MY_Model {
 	public function __construct()
 	{		
 		parent::__construct();
-		$this->_table = 'inn_epg_ch_detail';
+		$this->_table = 'epg_ch_detail';
 	}
 	
 
 	public function get_all_channel()
 	{
 // 		$this->db->select('id, name, num, cat, desc, logo');
-// 		$this->db->from('default_inn_epg_ch_detail');
+// 		$this->db->from('default_epg_ch_detail');
 		
 		
 		$this->db->select('t0.id, t0.name, t0.num, t1.cat, t0.is_active, t0.desc, t0.logo');
-		$this->db->from('default_inn_epg_ch_detail t0');
-		$this->db->join('default_inn_epg_ch_category t1' ,'t1.id = t0.cat'); 
+		$this->db->from('default_epg_ch_detail t0');
+		$this->db->join('default_epg_ch_category t1' ,'t1.id = t0.cat'); 
 		
 		return $this->db->get()->result();
 	}
@@ -96,7 +96,7 @@ class Epg_Ch_m extends MY_Model {
 	
 	public function get_categories()
 	{
-		return $this->db->get('inn_epg_ch_category')->result();
+		return $this->db->get('epg_ch_category')->result();
 	}
 	
 	public function get_category_by($where, $single = FALSE)
@@ -111,6 +111,6 @@ class Epg_Ch_m extends MY_Model {
 			$this->db->where($where);	
 		}
 		
-		return $this->db->get('inn_epg_ch_category')->$method();
+		return $this->db->get('epg_ch_category')->$method();
 	}
 }

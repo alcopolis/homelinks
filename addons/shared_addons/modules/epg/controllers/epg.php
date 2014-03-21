@@ -20,6 +20,7 @@ class Epg extends Public_Controller
 		$this->load->model('epg_ch_m');
 		$this->load->model('epg_sh_m');
 		$this->load->library('form_validation');
+		$this->load->library('alcopolis');
 		$this->lang->load('epg');
 		
 		// Set validation rules
@@ -33,6 +34,7 @@ class Epg extends Public_Controller
 			->append_js('module::main.js')
 			->append_css('module::style.css')
 			->set($var)
+			->set_layout('retail.html')
 			->build($view);
 	}
 	
@@ -44,52 +46,23 @@ class Epg extends Public_Controller
 		foreach($channels as $c){
 			$ch[$c->id] = $c->name;
 		}
-				
-		$cats = $this->epg_ch_m->get_categories();
-			
-		foreach($cats as $ct){
-			if($ct->id == '0'){
-				$cat[0] = 'All Categories';
-			}else{
-				$cat[$ct->id] = $ct->cat;
-			}
-		}
-		
+						
 		$tgl = '';
-		
+		$ch_info = NULL;
 		
 		if($this->form_validation->run()){
-
-			$cond = array(
-					'date' => $this->input->post('date'),
-					'cat_id' => $this->input->post('cat_id')
-			);
-			
-			$sh = $this->epg_sh_m->get_epg_by($cond);
+			$cond = $this->alcopolis->array_from_post(array('cid', 'date'), $this->input->post());
+			$sh = $this->epg_sh_m->get_epg_by($cond);	
+			$tgl = $this->input->post('date');
+			$ch_info = $this->epg_ch_m->get_channel_by(array('id'=>$this->input->post('cid')), '', TRUE);
 		}else{
-			$sh = $this->epg_sh_m->get_epg();
+			$sh = NULL;
 			$tgl = date('Y-m-d');
 		}
 		
-		$this->render('epg', array('shows'=>$sh, 'ch'=>$ch, 'cat'=>$cat, 'tgl'=>$tgl));
+		$this->render('tv-guide', array('shows'=>$sh, 'ch'=>$ch, 'tgl'=>$tgl, 'ch_info'=>$ch_info));
 	}
 	
-	
-	
-	public function show($id = NULL){
-		if($id == NULL){
-			$this->render('show_home');
-		}else{
-			$sh = $this->epg_sh_m->get_show_detail($id);
-			$title = $sh->title;
-			$cid = $sh->cid;
-			$date = $sh->date;
-			
-			$similar = $this->epg_sh_m->similar_show(array('title'=>$title, 'cid'=>$cid, 'date > '=>$date), 'id, date, time, duration', 5);
-			
-			$this->render('show', array('shows'=>$sh, 'similar'=>$similar));
-		}		
-	}
 	
 	public function channel_lineup(){
 		$cats = $this->epg_ch_m->get_categories();

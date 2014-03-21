@@ -12,7 +12,7 @@ class Epg_Sh_Cat_m extends MY_Model {
 	public function __construct()
 	{		
 		parent::__construct();
-		$this->_table = 'inn_epg_show_category';
+		$this->_table = 'epg_show_category';
 	}
 	
 	

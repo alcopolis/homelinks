@@ -94,23 +94,7 @@ class Plugin_Epg extends Plugin
 							),
 						),
 				),
-				
-				'ch_lineup' => array(
-						'description' => array(// a single sentence to explain the purpose of this method
-								'en' => ''
-						),
-						'single' => true,// will it work as a single tag?
-						'double' => false,// how about as a double tag?
-						'attributes' => array(
-							'category' => array(
-									'type' => 'text',// Can be: slug, number, flag, text, array, any.
-									'flags' => '',
-									'default' => 'Uncategorized',
-									'required' => false,
-							),
-						),
-				),
-				
+								
 				'metadata' => array(
 						'description' => array(// a single sentence to explain the purpose of this method
 								'en' => ''
@@ -119,6 +103,23 @@ class Plugin_Epg extends Plugin
 						'double' => false,// how about as a double tag?
 						'attributes' => array(
 						
+						),
+				),
+				
+				'ch_lineup' => array(
+						'description' => array(
+								'en' => ''
+						),
+						'single' => false,// will it work as a single tag?
+						'double' => true,// how about as a double tag?
+						'variables' => 'id|cat|list',// the variables available inside the double tags
+						'attributes' => array(
+								'category' => array(
+										'type' => 'text',// Can be: slug, number, flag, text, array, any.
+										'flags' => '',
+										'default' => 'Uncategorized',
+										'required' => false,
+								),
 						),
 				),
 		);
@@ -213,7 +214,7 @@ class Plugin_Epg extends Plugin
 	}
 	
 	function ch_lineup(){
-//		Channel Category
+// 		Channel Category
 // 		0	Uncategorized
 // 		1	National FTA
 // 		2	International FTA
@@ -225,42 +226,20 @@ class Plugin_Epg extends Plugin
 // 		8	Kids And Toddler
 // 		9	News
 		
+		$data;
 		
-		if($this->attribute('category') == 'All Categories'){
-			$raw = $this->epg_ch_m->order_by('cat', 'ASC')->get_channel_by(array('is_active'=>'1'), '');
+		if($this->attribute('category') == ''){
+			$data = $this->epg_ch_m->get_categories();
 		}else{
-			$cat = $this->epg_ch_m->get_category_by(array('cat' => $this->attribute('category')), TRUE);
-			$raw = $this->epg_ch_m->get_channel_by(array('cat' => $cat->id, 'is_active'=>'1'), '');
+			$data = $this->epg_ch_m->get_category_by(array('cat' => $this->attribute('category')), FALSE);
 		}
 		
-		
-		
-		$data = '';
-		
-		foreach($raw as $ch){
-			if($ch->desc != ''){
-				$desc = $ch->desc;	
-			}else{
-				$desc = 'No Description';
-			}
-			
-			if($ch->logo != ''){
-				$logo = $ch->logo;
-			}else{
-				$logo = '{{theme:image_path}}/theme/default-icon.jpg';
-			}
-			
-			$ch_cat = $this->epg_ch_m->get_category_by(array('id' => $ch->cat), TRUE);
-			//var_dump($ch_cat);
-			
-			$data .= '<div class="ch" data-name="' . $ch->name . '" data-num="' . $ch->num . '" data-cat="' . $ch_cat->cat . '" data-logo="' . $logo . '" data-desc="' . $desc . '" data-link="schedule/' . $ch->id . '">' . $ch->name . '</div>';	
+		foreach($data as $key=>$val){
+			$data[$key]->list = $this->epg_ch_m->get_channel_by(array('cat' => $data[$key]->id), '', FALSE);
 		}
 		
 		return $data;
 	}
-	
-	
-	
 	
 	
 	function featured(){
