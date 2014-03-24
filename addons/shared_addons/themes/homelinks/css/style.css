@@ -208,14 +208,19 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 /* --------------------------------------------Content------------------------------------- */
 
 #content{margin-top:0; background:none; position:relative; font-size:14px;}
-.home #content{margin-top:80px; min-height:390px; background:#EFEFEF}
+body.home #content{margin-top:80px; min-height:390px;}
 
 #body-theme{
 	width:100%; 
 	margin:0 auto;  
+	min-height:400px;
+	background:url(../img/themes/homebody-bg.png) right bottom no-repeat;
+	background-size:auto 400px;
 }
 
+
 #body-wrapper{width:90%; min-width:960px; margin:0 auto; padding:80px 0 40px 0;}
+body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto; padding:0 0 40px;}
 
 .featured{margin:0 auto;}
 .featured h4{
@@ -245,8 +250,13 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 
 
 /* Utility in Homepage */
-#utils{padding:0; margin:40px auto 0 auto; width:85%; line-height:1em;}
-#utils .util-item{float:left; width:25%; text-align:center; background-size:100% auto; display: block; cursor:pointer}
+
+#testimony{margin-bottom:40px;}
+#testimony blockquote{font-size:24px; font-weight:800; line-height:normal; text-align:center; color:#333;}
+
+
+#utils{padding:0; margin:40px auto 0 auto; width:660px; line-height:1em;}
+#utils .util-item{float:left; width:220px; text-align:center; background-size:100% auto; display: block; cursor:pointer}
 #utils .util-item.last{border-right:none;}
 #utils .util-item img{width:120px; height:120px;}
 
@@ -268,9 +278,6 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 /* 	background-position: center center; */
 }
 
-#hotline.util-item {
-	
-}
 
 
 
@@ -279,10 +286,12 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 /*-------------------------- Product Page Style ----------------------*/
 
 
+#socmed{position:relative; width:160px; margin:0 0 0 auto;}
+
 .tabs{
 	width:100%;
 	margin:0 auto;
-	margin:40px auto;
+	margin:40px auto 10px auto;
 }
 
 #tab-nav{
@@ -303,7 +312,7 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 #tab-nav li a{color:#EEE}
 
 #tab-nav li:hover a, #tab-nav li.active a{color:#333;}
-#tab-nav li:hover, #tab-nav li.active{background:#FFF;}
+#tab-nav li:hover, #tab-nav li.active{background:rgba(240,240,240,.85);}
 
 #tab-nav:after{
 	content: "."; display: block; height: 0; clear: both; visibility:hidden;  
@@ -313,10 +322,10 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 
 .tab-container{
 	display:none;
-	margin:0;
+	margin:0 auto;
 	padding:20px 0;
 	width:100%;
-	background:#FFF;
+	background:rgba(240,240,240,.85);
 	border-radius:0 15px 15px 15px;
 	
 	-moz-transition: opacity .5s ease-out; 
@@ -395,7 +404,7 @@ a#register{
 	border-bottom: 5px solid transparent;
 }
 
-.ch-list{background:#EEE; }
+.ch-list{background:none; }
 
 
 
