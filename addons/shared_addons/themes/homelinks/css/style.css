@@ -219,7 +219,7 @@ body.home #content{margin-top:80px; min-height:390px;}
 }
 
 
-#body-wrapper{width:90%; min-width:960px; margin:0 auto; padding:80px 0 40px 0;}
+#body-wrapper{width:90%; min-width:960px; margin:0 auto; padding:120px 0 40px 0;}
 body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto; padding:0 0 40px;}
 
 .featured{margin:0 auto;}
@@ -382,36 +382,6 @@ a#register{
 	
 	border-radius:5px;
 }
-
-
-
-
-/* ====================================================== Channel Lineup ======================================================= */
-
-#lineup{line-height:2.5em;}
-#lineup span{padding:3px 10px;}
-.genre{background:#ED2024; margin-left:20px; border-radius:3px;color:#FFF;}
-.genre:first-child{margin-left:0;}
-.arrow-right{
-	display:inline-block;
-	line-height:0;
-	margin:0 !important;
-	padding:0 !important;
-	width: 0 !important; 
-	height: 0 !important; 
-	border-top: 5px solid transparent; 
-	border-left: 20px solid #ED2024;
-	border-bottom: 5px solid transparent;
-}
-
-.ch-list{background:none; }
-
-
-
-
-
-
-
 
 
 

@@ -34,7 +34,6 @@ class Epg extends Public_Controller
 			->append_js('module::main.js')
 			->append_css('module::style.css')
 			->set($var)
-			->set_layout('retail.html')
 			->build($view);
 	}
 	
@@ -50,7 +49,7 @@ class Epg extends Public_Controller
 		$tgl = '';
 		$ch_info = NULL;
 		
-		if($this->form_validation->run()){
+		if($this->form_validation->run()){			
 			$cond = $this->alcopolis->array_from_post(array('cid', 'date'), $this->input->post());
 			$sh = $this->epg_sh_m->get_epg_by($cond);	
 			$tgl = $this->input->post('date');

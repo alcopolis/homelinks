@@ -1,68 +1,116 @@
-<div style="margin:0 auto; width:960px;">
+<!DOCTYPE html>
+<html>
+<head>
+	{{ if alcopolis:site_status }}
+		{{ theme:partial name="metadata" }}
+	{{ else }}
+		{{ theme:partial name="maintenance" }}
+	{{ endif }}
+</head>
+<body id="top">
 	
-    <div id="sch-util">  
-        <form id="sch-filter" class="clearfix" method="post" action="epg" style="background-image:url({{theme:image_path}}tv-guide.png); background-repeat:no-repeat; background-position:right center;"> 
-				<div class="filter" style="width:100px;">
-					<label for="date">Date</label>
-					<div class="input"><?php echo form_input('date', set_value('date', date("Y-m-d")), 'id="date" class="datepicker" maxlength="20"'); ?></div>
-				</div>
-				               
-                <div class="filter" style="width:180px;">
-					<label for="cid">Channel</label>
-					<div class="input">
-						<?php echo form_dropdown('cid', $ch); ?>
-					</div>
-				</div>
-				
-				<div class="filter">
-					<label for="submit">&nbsp;</label>
-					<div class="input"><?php echo form_submit('submit', 'View'); ?></div>
-				</div>
-        </form>
-    </div>
-    
-   
-   
-   
-   <?php if($shows != NULL){ ?> 
-	   <table id="epg-tool" cellpadding="0" cellspacing="5" border="0">		   
-		   		<?php if(!empty($shows->sh)){ ?>
-	   				<tr id="today">
-	   					<td colspan="2" class="clearfix">
-	   						<p style="width:500px; float:left;">
-	   							<?php echo $ch_info->name; ?> | Ch. <?php echo $ch_info->num; ?>
-	   							<br/><br/>
-	   							<span style="font-size:14px;"><?php echo $ch_info->desc; ?></span>
-	   						</p>
-	   						<p style="width:260px; font-size:18px; font-weight:600; float:right; text-align:right;"><?php echo $tgl != NULL ? date('d F Y', strtotime($tgl)) : date('d F Y'); ?></p>
-	   					</td>
-	   				</tr>
-	   				
-		   			<?php foreach($shows->sh as $s){ ?>
-		   			<tr class="show">
-		   				<td class="sch-time"><?php echo date('H:i a', strtotime($s->time)); ?></td>
-		   				<td class="sch-data">
-		   					<p class="title"><?php echo $s->title; ?> | <span class="dur">Durasi <?php echo date('H:i ', strtotime($s->duration)); ?></span></p>
-		   					<?php if($s->syn_id != NULL){ ?>
-			   					<p class="syn_id"><?php echo $s->syn_id; ?></p>
-			   					<?php if($s->syn_en != NULL){ ?>
-				   					<hr/>
-				   					<p class="syn_en"><?php echo $s->syn_en; ?></p>
-			   					<?php } ?>
-			   				<?php }elseif($s->syn_id != NULL){ ?>
-			   					<p class="syn_en"><?php echo $s->syn_en; ?></p>
-			   				<?php } ?>
-		   				</td>
-		   			</tr>
-		   			<?php } ?>
-		   		<?php }else{ ?>		
-		   			<div id="no-data">Sorry, no schedules data for this channel.</div>
-		   		<?php } ?>
-	   </table>
-   <?php }else{ ?>
-	   <div style="min-height:300px; text-align:center"><img src="{{theme:image_path}}tv-guide-home.jpg" style="width:auto;" /></div>
-   <?php } ?>	 
-    
-    <img src="{{theme:image_path}}tvcable2.jpg">
+	{{ integration:analytics }}
+	
+	{{ if alcopolis:site_status }}
+	 	<header class="wrapper">
+	 		{{ theme:partial name="header" }}
+	 	</header>
+	 	
+	 	 <div id="content" class="wrapper">
+	 	 	<div id="body-theme" class="clearfix">
+		 	 	<div id="body-wrapper">
 
-</div>
+					<div style="margin:0 auto; width:960px;">
+						
+					    <div id="sch-util">  
+					        <form id="sch-filter" class="clearfix" method="post" action="epg" style="background-image:url({{theme:image_path}}tv-guide.png); background-repeat:no-repeat; background-position:right center;"> 
+									<div class="filter" style="width:100px;">
+										<label for="date">Date</label>
+										<div class="input"><?php echo form_input('date', set_value('date', date("Y-m-d")), 'id="date" class="datepicker" maxlength="20"'); ?></div>
+									</div>
+									               
+					                <div class="filter" style="width:180px;">
+										<label for="cid">Channel</label>
+										<div class="input">
+											<?php echo form_dropdown('cid', $ch); ?>
+										</div>
+									</div>
+									
+									<div class="filter">
+										<label for="submit">&nbsp;</label>
+										<div class="input"><?php echo form_submit('submit', 'View'); ?></div>
+									</div>
+					        </form>
+					    </div>
+					    
+					   
+					   
+					   
+					   <?php if($shows != NULL){ ?> 
+						   <table id="epg-tool" cellpadding="0" cellspacing="5" border="0">		   
+							   		<?php if(!empty($shows->sh)){ ?>
+						   				<tr id="today">
+						   					<td colspan="2" class="clearfix">
+						   						<p style="width:500px; float:left;">
+						   							<?php echo $ch_info->name; ?> | Ch. <?php echo $ch_info->num; ?>
+						   							<br/><br/>
+						   							<span style="font-size:14px;"><?php echo $ch_info->desc; ?></span>
+						   						</p>
+						   						<p style="width:260px; font-size:18px; font-weight:600; float:right; text-align:right;"><?php echo $tgl != NULL ? date('d F Y', strtotime($tgl)) : date('d F Y'); ?></p>
+						   					</td>
+						   				</tr>
+						   				
+							   			<?php foreach($shows->sh as $s){ ?>
+							   			<tr class="show">
+							   				<td class="sch-time"><?php echo date('H:i a', strtotime($s->time)); ?></td>
+							   				<td class="sch-data">
+							   					<p class="title"><?php echo $s->title; ?> | <span class="dur">Durasi <?php echo date('H:i ', strtotime($s->duration)); ?></span></p>
+							   					<?php if($s->syn_id != NULL){ ?>
+								   					<p class="syn_id"><?php echo $s->syn_id; ?></p>
+								   					<?php if($s->syn_en != NULL){ ?>
+									   					<hr/>
+									   					<p class="syn_en"><?php echo $s->syn_en; ?></p>
+								   					<?php } ?>
+								   				<?php }elseif($s->syn_id != NULL){ ?>
+								   					<p class="syn_en"><?php echo $s->syn_en; ?></p>
+								   				<?php } ?>
+							   				</td>
+							   			</tr>
+							   			<?php } ?>
+							   		<?php }else{ ?>		
+							   			<div id="no-data">Sorry, no schedules data for this channel.</div>
+							   		<?php } ?>
+						   </table>
+					   <?php }else{ ?>
+						   <div style="min-height:300px; text-align:center"><img src="{{theme:image_path}}tv-guide-home.jpg" style="width:auto;" /></div>
+					   <?php } ?>	 
+					    
+					    <div id="lineup" style="width:880px; margin:0 auto; padding:10px; background:rgba(255,255,255,.85); box-shadow:0 0 3px #999; border-radius:5px;">
+							{{ epg:ch_lineup category=""}} 
+							{{ if list }} 
+								<span class="genre"> {{ cat }} </span>
+								<span class="arrow-right">&nbsp;</span> 
+								{{ list }} 
+									<span class="ch-list">{{ name }}</span> 
+								{{ /list }}
+							{{ endif }}
+							{{ /epg:ch_lineup }}
+						</div>
+					
+					</div>
+					
+					</div>
+			</div>
+	 	 </div>
+	 	 
+	 	 <footer>
+	    	{{ theme:partial name="footer" }}
+	     </footer>  
+	 	
+	{{ else }}
+		
+		{{ theme:partial name="site_down" }}
+		
+	{{ endif }}
+</body>
+</html>

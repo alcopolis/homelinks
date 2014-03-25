@@ -84,4 +84,22 @@ span#ch{
 
 
 
+/* ====================================================== Channel Lineup ======================================================= */
 
+#lineup{line-height:2em; font-size:12px;}
+#lineup span{padding:0px 5px;}
+.genre{background:#ED2024; margin-left:10px; border-radius:3px;color:#FFF;}
+.genre:first-child{margin-left:0;}
+.arrow-right{
+	display:inline-block;
+	line-height:0;
+	margin:0 !important;
+	padding:0 !important;
+	width: 0 !important; 
+	height: 0 !important; 
+	border-top: 5px solid transparent; 
+	border-left: 20px solid #ED2024;
+	border-bottom: 5px solid transparent;
+}
+
+.ch-list{background:none; }
