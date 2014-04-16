@@ -207,6 +207,8 @@ header #logo h1 a{display:block; text-indent:-9999px;}
 
 /* --------------------------------------------Content------------------------------------- */
 
+
+
 #content{margin-top:0; background:none; position:relative; font-size:14px;}
 body.home #content{margin-top:80px; min-height:390px;}
 
@@ -252,7 +254,7 @@ body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto;
 /* Utility in Homepage */
 
 #testimony{margin-bottom:40px;}
-#testimony blockquote{font-size:24px; font-weight:800; line-height:normal; text-align:center; color:#333;}
+#testimony blockquote{font-size:22px; font-weight:normal; line-height:normal; text-align:center; color:#333;}
 
 
 #utils{padding:0; margin:40px auto 0 auto; width:660px; line-height:1em;}
@@ -305,14 +307,31 @@ body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto;
 	position:relative;
 	margin:0 5px 0 0;
 	padding:10px;
-	background:#999;
 	border-radius:5px 5px 0 0;
+
+	background:#999;
+	background: -moz-linear-gradient(top, #999999 0%, #333333 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(100%,#333333)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #999999 0%,#333333 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #999999 0%,#333333 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #999999 0%,#333333 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #999999 0%,#333333 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999999', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
 }
 
 #tab-nav li a{color:#EEE}
 
-#tab-nav li:hover a, #tab-nav li.active a{color:#333;}
-#tab-nav li:hover, #tab-nav li.active{background:rgba(240,240,240,.85);}
+#tab-nav li:hover a, #tab-nav li.active a{color:#FFF;}
+#tab-nav li:hover, #tab-nav li.active{
+	background: #ed2024; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ed2024 69%, #c10003 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(69%,#ed2024), color-stop(100%,#c10003)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ed2024 69%,#c10003 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ed2024 69%,#c10003 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ed2024 69%,#c10003 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ed2024 69%,#c10003 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed2024', endColorstr='#c10003',GradientType=0 ); /* IE6-9 */
+}
 
 #tab-nav:after{
 	content: "."; display: block; height: 0; clear: both; visibility:hidden;  
@@ -325,8 +344,9 @@ body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto;
 	margin:0 auto;
 	padding:20px 0;
 	width:100%;
-	background:rgba(240,240,240,.85);
+	background:rgba(255,255,255,.85);
 	border-radius:0 15px 15px 15px;
+	box-shadow:0 2px 5px rgba(0,0,0,0.25);
 	
 	-moz-transition: opacity .5s ease-out; 
     -webkit-transition: opacity .5s ease-out;

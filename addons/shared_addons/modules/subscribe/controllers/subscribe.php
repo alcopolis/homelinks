@@ -10,7 +10,7 @@
 class Subscribe extends Public_Controller
 {
 	protected $ADMIN_PATH;
-	protected $SALES_EMAIL = 'cs@cepat.net.id';
+	protected $SALES_EMAIL = 'sales@cepat.net.id';
 	protected $TICKET_PREFIX = '10';
 	
 	protected $subscriber;
@@ -47,9 +47,7 @@ class Subscribe extends Public_Controller
 	
 	
 	public function index(){
-		if($this->form_validation->run()){
-			echo 'validation ok';
-			
+		if($this->form_validation->run()){			
 			$db_fields = array('name', 'email', 'address', 'area_code', 'phone', 'mobile');
 			$data = $this->alcopolis->array_from_post($db_fields, $this->input->post());
 			$data['date'] = date('Y-m-d');
@@ -92,7 +90,7 @@ class Subscribe extends Public_Controller
 			}
 		}else{
 			$this->subscriber = $this->subscribe_m->get_new();
-			$this->template->set_layout('retail.html');
+			$this->template->set_layout('default');
 			$this->render('subscribe');
 		}
 	}

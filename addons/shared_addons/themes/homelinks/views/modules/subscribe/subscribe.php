@@ -1,10 +1,10 @@
 <div id="subscribe-ack" class="left">
-	<h1 style="text-align:center; margin-bottom:40px;">Pendaftaran Layanan <br/><img src="{{ theme:image_path }}homelinks.png" style="width:100%;" /></h1>
+	<h1 style="text-align:center; margin-bottom:40px;">Pendaftaran Layanan <br/><img src="{{ theme:image_path }}themes/logo.png" style="width:100%;" /></h1>
 	{{ blog:posts limit="1" category="side-promo" order-dir="desc" }}
 		<div style="border-radius:5px; overflow:hidden; box-shadow:0 0 2px #CCC; height:400px;"><a href="{{ url }}" style="display:block;"><img data-pyroimage="true" src="uploads/default/files/{{ cover:filename }}" style="width:200px; height:400px;" /></a></div> 
 	{{ /blog:posts }}
 	
-	<div style="margin-top:30px;">
+	<div style="margin:40px 0 0 10px;">
 	    <h1>Perhatian</h1>
 	    <p>Calon pelanggan bertanggung jawab penuh terhadap kebenaran dari seluruh data dan informasi yg disampaikan didalam formulir pendaftaran.
 	    Homelinks berhak secara sepihak menolak permohonan calon pelanggan.</p>
@@ -72,9 +72,9 @@
 	        </div>
 	    <?php echo form_close(); ?>
 		
-		<div id="coverage-container" class="left" style="width:718px; text-align:center; display:none">
+		<div id="coverage-container" class="left" style="width:718px; text-align:center; display:none; ">
 			<p style="text-align:right; padding:10px 20px; border-bottom:1px dotted #CCC;"><a href="#form-container">&laquo; Back To Form</a></p>
-			<img src="{{theme:image_path}}coverage-area.jpg" title="Coverage Area" style="width:inherit" />
+			<img src="{{ url:site }}files/large/aa2924d2a4ddbdf" title="Coverage Area" style="width:inherit" />
 		</div>
 	</div>
 </div>

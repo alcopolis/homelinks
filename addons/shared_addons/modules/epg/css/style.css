@@ -86,7 +86,7 @@ span#ch{
 
 /* ====================================================== Channel Lineup ======================================================= */
 
-#lineup{line-height:2em; font-size:12px;}
+#lineup{line-height:2em; font-size:12px; width:880px; margin:40px auto 0 auto; padding:10px; background:rgba(255,255,255,.85); box-shadow:0 0 3px #999; border-radius:5px;}
 #lineup span{padding:0px 5px;}
 .genre{background:#ED2024; margin-left:10px; border-radius:3px;color:#FFF;}
 .genre:first-child{margin-left:0;}

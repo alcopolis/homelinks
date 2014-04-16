@@ -85,7 +85,7 @@
 						   <div style="min-height:300px; text-align:center"><img src="{{theme:image_path}}tv-guide-home.jpg" style="width:auto;" /></div>
 					   <?php } ?>	 
 					    
-					    <div id="lineup" style="width:880px; margin:0 auto; padding:10px; background:rgba(255,255,255,.85); box-shadow:0 0 3px #999; border-radius:5px;">
+					    <div id="lineup">
 							{{ epg:ch_lineup category=""}} 
 							{{ if list }} 
 								<span class="genre"> {{ cat }} </span>

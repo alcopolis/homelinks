@@ -96,7 +96,7 @@ class Admin extends Admin_Controller
 		
 		
 		$limit = 30;
-		$pagination = create_pagination('admin/subscribe/index', $this->db->count_all('inn_subscribe'), $limit);
+		$pagination = create_pagination('admin/subscribe/index', $this->db->count_all('subscriber'), $limit);
 		
 		$this->filter =  new stdClass();
 		
@@ -145,7 +145,7 @@ class Admin extends Admin_Controller
 		$sid = $this->input->get('id');
 		$val = $this->input->get('val');
 		
-		if($this->db->update('default_inn_subscribe', array('closing_flag' => $val), "id = " . $sid)){
+		if($this->db->update('default_subscriber', array('closing_flag' => $val), "id = " . $sid)){
 			$respond = array();
 			
 			if($val == '2' || $val == '3'){

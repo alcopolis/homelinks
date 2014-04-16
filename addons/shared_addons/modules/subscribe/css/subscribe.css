@@ -27,7 +27,18 @@
 	overflow:hidden;
 }
 
-#container{width:1440px; display:block; position:relative; left:0;}
+#container{
+	width:1440px; 
+	display:block; 
+	position:relative; 
+	left:0;
+
+	-moz-transition: height .75s ease-out, background-color 1s ease-out;
+    -webkit-transition: height .75s ease-out, background-color 1s ease-out;
+    -ms-transition: height .75s ease-out, background-color 1s ease-out;
+    -o-transition: height .75s ease-out, background-color 1s ease-out;
+	transition: height .75s ease-out, background-color 1s ease-out;
+}
 
 #form-container{
 	width:718px;

@@ -51,7 +51,7 @@ class Subscribe_m extends MY_Model {
 		 * then MY_Model would find it automatically. Since
 		 * I named it "sample" then we just set the name here.
 		 */
-		$this->_table = 'inn_subscribe';
+		$this->_table = 'subscriber';
 	}
 	
 	
