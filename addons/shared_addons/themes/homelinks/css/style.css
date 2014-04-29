@@ -253,8 +253,8 @@ body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto;
 
 /* Utility in Homepage */
 
-#testimony{margin-bottom:40px;}
-#testimony blockquote{font-size:22px; font-weight:normal; line-height:normal; text-align:center; color:#333;}
+#testimony{margin:80px 0;}
+#testimony blockquote{font-size:22px; font-weight:bold; line-height:normal; text-align:center; color:#333;}
 
 
 #utils{padding:0; margin:40px auto 0 auto; width:660px; line-height:1em;}
@@ -387,8 +387,8 @@ body.products #body-wrapper{color:#333; font-size:14px; margin:20px auto 0 auto;
 #toc{clear:both; color:#717174; margin-left:20px; padding:10px 0 0 0;}
 #toc p{font-size:11px; margin:0; padding:0;}
 
-#banner{margin:0 0 0 0; padding:0; height:480px; overflow:hidden;}
-#banner img{margin:0; padding:0;}
+#banner{margin:80px 0 0 0; padding:0; height:480px; overflow:hidden;}
+#banner img{margin:0; padding:0; width:960px;}
 
 
 
@@ -455,6 +455,6 @@ a#fb:hover{background-image:url(../img/fb-color.png)}
 a#pinterest{background-image:url(../img/pinterest.png)}
 a#pinterest:hover{background-image:url(../img/pinterest-color.png)}
 
-#sinarmas{text-align:center; background:#FFF; position:absolute; left:20px; bottom:0px; width:140px; padding:6px 0 2px 0; box-shadow:0 -3px 10px rgba(0,0,0,0.25);}
-#copy{font-size:11px; color:#FFF;}
+#sinarmas{text-align:center; background:#FFF; width:240px; padding:6px 0 6px 0; border-radius:0 0 5px 5px;}
+#copy{font-size:11px; color:#FFF; padding:0 0 5px 0;}
 

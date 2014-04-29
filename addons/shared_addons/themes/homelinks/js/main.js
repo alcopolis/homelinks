@@ -12,6 +12,10 @@ $(document).ready(function() {
 			$(this).children('ul.dropdown').slideUp(150)
 		})
 		
+		$('ul#main-menu li.no-click > a').click(function(e){
+			e.preventDefault();
+		})
+		
 		
 		$(document).scroll(function(){
 			console.log($(this).scrollTop());

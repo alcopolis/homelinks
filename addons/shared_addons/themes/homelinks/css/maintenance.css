@@ -16,7 +16,7 @@ body {
 
 #maintenance {
 	width:1024px;
-	height:670px;
+	height:520px;
 	background:url(../img/themes/under-construction-page.jpg) no-repeat center center;	
 }
 
@@ -92,8 +92,8 @@ p.acknowledge{
 	width:100%;
 	font-family: "Helvetica Neue",Helvetica,Tahoma,sans-serif;
 	font-size:11px;
+	text-align:center;
 	color:#717173;
 	position:fixed;
-	margin-left:110px;
-	bottom:20px;
+	bottom:40px;
 }

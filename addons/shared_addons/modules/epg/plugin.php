@@ -235,7 +235,7 @@ class Plugin_Epg extends Plugin
 		}
 		
 		foreach($data as $key=>$val){
-			$data[$key]->list = $this->epg_ch_m->get_channel_by(array('cat' => $data[$key]->id), '', FALSE);
+			$data[$key]->list = $this->epg_ch_m->get_channel_by(array('cat' => $data[$key]->id, 'is_active'=>1), '', FALSE);
 		}
 		
 		return $data;
