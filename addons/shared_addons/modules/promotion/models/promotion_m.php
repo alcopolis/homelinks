@@ -33,7 +33,7 @@ class Promotion_m extends MY_Model
 	
 	public function __construct() {
 		parent::__construct();
-		$this->_table = 'inn_promotion';
+		$this->_table = 'promotion';
 	}
 	
 	public function get_promo($fields = '', $single = false){

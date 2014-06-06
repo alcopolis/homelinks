@@ -97,7 +97,7 @@ class Plugin_Promotion extends Plugin
 		$data = '';
 	
 		$this->load->library('asset');
-		$this->asset->in_build();
+		//$this->asset->in_build();
 	
 		$now = date('Y-m-d', time());
 	

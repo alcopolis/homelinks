@@ -15,7 +15,7 @@ class Category_m extends MY_Model
 
 	public function __construct() {
 		parent::__construct();
-		$this->_table = 'inn_promotion_category';
+		$this->_table = 'promotion_category';
 	}
 	
 	function get_categories(){

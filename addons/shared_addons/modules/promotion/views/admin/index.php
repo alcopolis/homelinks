@@ -41,6 +41,8 @@
 						<?php } ?>
 					</tbody>
 				</table>
+			<?php }else{ ?>
+				<p>No Entry</p>
 			<?php } ?>
 			</div>
 		</div>
